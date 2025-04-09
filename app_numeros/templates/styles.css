@@ -1,0 +1,170 @@
+/* Estilo Brutalista-Giger */
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    background-image: 
+        radial-gradient(circle at 10% 20%, #2d2d2d 0%, transparent 20%),
+        linear-gradient(to right, #333 1px, transparent 1px),
+        linear-gradient(to bottom, #333 1px, transparent 1px);
+    background-size: 
+        100% 100%,
+        20px 20px,
+        20px 20px;
+    color: #c4c4c4;
+}
+
+.container {
+    text-align: center;
+    background: #2e2e2e;
+    padding: 2.5rem;
+    border: 6px solid #4a4a4a;
+    box-shadow: 
+        12px 12px 0 #1e1e1e,
+        inset 0 0 30px rgba(0,0,0,0.5);
+    max-width: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #5a5a5a, #3e3e3e, #5a5a5a);
+}
+
+h1, h2 {
+    color: #d8d8d8;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #5a5a5a;
+    padding-bottom: 1rem;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+
+.drawing-area {
+    margin: 2.5rem auto;
+    border: 8px solid #3a3a3a;
+    background-color: #121212;
+    cursor: crosshair;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.drawing-area::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid #5e5e5e;
+    pointer-events: none;
+}
+
+.controls {
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    background-color: #3a3a3a;
+    color: #d0d0d0;
+    border: none;
+    border-bottom: 4px solid #5a5a5a;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    background-color: #4a4a4a;
+    color: #fff;
+    border-bottom-color: #6e6e6e;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    border-bottom-width: 2px;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+#clear-btn {
+    background-color: #3a2a2a;
+    border-bottom-color: #5a3a3a;
+}
+
+#clear-btn:hover {
+    background-color: #4a3a3a;
+    border-bottom-color: #6a4a4a;
+}
+
+.result {
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+    border-top: 2px solid #4a4a4a;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+#prediction {
+    font-weight: bold;
+    color: #a0a0a0;
+    font-size: 2.5rem;
+    background-color: #252525;
+    padding: 0.8rem 1.5rem;
+    border: 3px solid #4a4a4a;
+    display: inline-block;
+    min-width: 4rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Efecto Giger orgánico */
+.giger-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        radial-gradient(circle at 70% 30%, rgba(80,80,80,0.1) 0%, transparent 30%),
+        linear-gradient(135deg, transparent 45%, rgba(70,70,70,0.2) 45%, rgba(70,70,70,0.2) 55%, transparent 55%);
+    pointer-events: none;
+    z-index: -1;
+}
